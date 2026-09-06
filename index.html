@@ -1,33 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming Soon</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Slevin Hamilton — Coming Soon" />
+  <title>Slevin Hamilton — Coming Soon</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background-color: #05050f;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    :root{
+      --bg:#000;
+      --navy:#0b1024;
+      --cyan:#28b9ef;
+      --blue:#2f7ff0;
+      --violet:#8c39e8;
+      --magenta:#d1269a;
+      --text:#f7f7fb;
+      --muted:#b9bcc9;
     }
-    .container {
-      max-width: 500px;
-      width: 90%;
+
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text)}
+    body{
+      font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      overflow-x:hidden;
     }
-    .container img {
-      width: 100%;
-      height: auto;
-      display: block;
+
+    .page{
+      min-height:100svh;
+      display:grid;
+      place-items:center;
+      padding:clamp(28px,4vw,64px) 20px;
+      background:
+        radial-gradient(circle at 50% 28%, rgba(23,43,111,.42), transparent 30%),
+        radial-gradient(circle at 26% 45%, rgba(0,136,255,.12), transparent 28%),
+        radial-gradient(circle at 74% 50%, rgba(210,38,154,.11), transparent 28%),
+        linear-gradient(180deg,#000 0%,#02030a 20%,#050816 48%,#02030a 78%,#000 100%);
+      position:relative;
+      isolation:isolate;
+    }
+
+    .page::before,
+    .page::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      z-index:-1;
+    }
+
+    .page::before{
+      background:
+        radial-gradient(ellipse at 50% 0%, transparent 0 46%, rgba(0,0,0,.28) 73%, rgba(0,0,0,.82) 100%),
+        linear-gradient(90deg, rgba(0,0,0,.82), transparent 18%, transparent 82%, rgba(0,0,0,.82));
+    }
+
+    .page::after{
+      background:
+        radial-gradient(55% 24% at 14% 36%, rgba(35,130,255,.18), transparent 70%),
+        radial-gradient(55% 24% at 86% 54%, rgba(214,38,154,.17), transparent 70%);
+      filter:blur(18px);
+    }
+
+    .card{
+      width:min(860px,100%);
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    .logo{
+      width:min(560px,82vw);
+      height:auto;
+      display:block;
+      margin:0 auto clamp(44px,7vw,78px);
+      filter:drop-shadow(0 0 28px rgba(38,148,255,.14)) drop-shadow(0 0 28px rgba(209,38,154,.11));
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(42px,8vw,92px);
+      font-weight:500;
+      letter-spacing:.19em;
+      line-height:1;
+      text-transform:uppercase;
+      text-indent:.19em;
+    }
+
+    .divider{
+      width:min(170px,32vw);
+      height:3px;
+      border-radius:999px;
+      margin:34px 0 28px;
+      background:linear-gradient(90deg,var(--cyan),var(--blue),var(--violet),var(--magenta));
+      box-shadow:0 0 16px rgba(82,109,255,.35);
+    }
+
+    .message{
+      margin:0;
+      color:var(--muted);
+      font-size:clamp(17px,2.2vw,24px);
+      line-height:1.6;
+      letter-spacing:.01em;
+    }
+
+    .instagram{
+      margin-top:34px;
+      display:inline-flex;
+      align-items:center;
+      gap:16px;
+      padding:14px 20px;
+      border:1.5px solid transparent;
+      border-radius:999px;
+      color:#fff;
+      text-decoration:none;
+      background:
+        linear-gradient(#060814,#060814) padding-box,
+        linear-gradient(90deg,var(--cyan),var(--blue),var(--violet),var(--magenta)) border-box;
+      box-shadow:0 0 20px rgba(138,57,232,.14);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+
+    .instagram:hover,
+    .instagram:focus-visible{
+      transform:translateY(-2px);
+      box-shadow:0 0 28px rgba(138,57,232,.25);
+      outline:none;
+    }
+
+    .instagram svg{
+      width:29px;
+      height:29px;
+      flex:0 0 auto;
+    }
+
+    .ig-copy{
+      text-align:left;
+      line-height:1.15;
+    }
+
+    .ig-label{
+      display:block;
+      font-size:13px;
+      color:#cfd1db;
+      margin-bottom:4px;
+    }
+
+    .ig-handle{
+      display:block;
+      font-weight:700;
+      font-size:18px;
+      letter-spacing:.01em;
+    }
+
+    @media (max-width:640px){
+      .page{padding-inline:16px}
+      .logo{width:min(520px,92vw);margin-bottom:40px}
+      h1{letter-spacing:.12em;text-indent:.12em}
+      .instagram{padding:13px 17px;gap:13px}
+      .ig-handle{font-size:16px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *{scroll-behavior:auto!important;transition:none!important}
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="coming-soon.png" alt="Coming Soon">
-  </div>
+  <main class="page">
+    <section class="card" aria-labelledby="coming-soon">
+      <img class="logo" src="slevin-hamilton-logo.png" alt="Slevin Hamilton" />
+
+      <h1 id="coming-soon">Coming Soon</h1>
+      <div class="divider" aria-hidden="true"></div>
+      <p class="message">Something awesome is on the way.<br />Stay tuned!</p>
+
+      <a class="instagram" href="https://www.instagram.com/SlevinHamilton/" target="_blank" rel="noopener noreferrer" aria-label="Follow Slevin Hamilton on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/>
+        </svg>
+        <span class="ig-copy">
+          <span class="ig-label">Follow us on Instagram</span>
+          <span class="ig-handle">@SlevinHamilton</span>
+        </span>
+      </a>
+    </section>
+  </main>
 </body>
 </html>
